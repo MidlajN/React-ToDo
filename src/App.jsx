@@ -1,33 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Header from './Header'
+import { useState, useEffect } from 'react'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [currentTime, setCurrentTime] = useState(new Date());
 
+  useEffect(() => {
+    // Update Current Time 
+    const intervalId = setInterval(()=>{
+      setCurrentTime(new Date());
+    }, 1000);
+
+    // Cleaning Up of interval on component unmounting
+    return () => clearInterval(intervalId);
+  }, []);
+
+  const formatedTime = currentTime.toLocaleString()
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div style={{height: '95vh'}}>
+        <Header />
+        <div className='toDo'>
+          <div className="card">
+            <div>
+              <h4>To-Do List</h4>
+              <span>{formatedTime}</span>
+            </div>
+            <div className='todoDiv' style={{ alignItems:'flex-end', paddingBlock: '20px 25px' }}>
+              <input className='toDoInput' type="text" />
+              <div style={{padding: '10px 15px'}}>
+                <i class="fa-solid fa-calendar-plus "></i>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
