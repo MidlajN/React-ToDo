@@ -6,12 +6,14 @@
 }
 
 .card {
+  margin-block: 10px;
   background-color: rgb(22 56 87 / 31%);
-  min-width: 40vw;
+  min-width: 30vw;
   box-shadow: 0px 0px 13px 0px rgb(102 146 189 / 33%);
   padding: 10px;
   border-radius: 5px;
   transition: 0.5s;
+  color: white;
 }
 
 .card div {
@@ -28,6 +30,38 @@
   font-size: 10px;
   font-weight: 700;
 }
+
+.todoList {
+  display: flex;
+  align-items: center;
+  margin: 20px 0px 10px 0px;
+  background-color: rgb(22 56 87 / 31%);
+  min-width: 30vw;
+  box-shadow: inset 0px 0px 13px 0px rgb(40 79 117 / 19%);
+  padding: 10px 20px 10px 20px;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+.todoList input {
+  accent-color: #00ff5a;
+  width: 20px;
+  height: 20px;
+  transition: 0.5s;
+}
+
+.todoList p {
+  margin-inline: 20px;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.todoList i {
+  margin-left: auto;
+  color: #ff570f;
+  cursor: pointer;
+}
+
 
 .todoDiv div {
   display: flex;
@@ -48,9 +82,21 @@
   border: none;
   /* margin-right: 10px; */
   transition:  0.5s ease !important;
+  color: white;
+  font-size: 1.1rem;
+  
 }
 
 .toDoInput:focus {
   outline: none;
   border-bottom: 1px solid #13cfbebd !important;
+}
+
+.todoBtn {
+  transition: 0.5s;
+}
+.todoBtn:hover {
+  color: rgb(39, 212, 212);
+  transform: scale(1.1);
+  cursor: pointer;
 }
