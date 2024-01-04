@@ -56,10 +56,25 @@
   font-weight: 700;
 }
 
+.todoList span {
+  font-size: 9px;
+  /* margin-top: auto; */
+  background-color: #bfb3b31f;
+  padding: 5px 10px;
+  border-radius: 20px;
+  color: #34a780;
+  font-weight: 600;
+}
+
 .todoList i {
   margin-left: auto;
   color: #ff570f;
   cursor: pointer;
+}
+
+
+.todoDone {
+  margin-left: 20px;
 }
 
 
